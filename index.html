@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> MyBakery - Toko Roti Premium</title>
+    <title>MyBakery - Toko Roti Premium</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Reset dan variabel CSS */
         :root {
@@ -17,20 +17,20 @@
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --radius: 8px;
         }
-
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
+        
         body {
             background-color: var(--light);
             color: var(--dark);
             line-height: 1.6;
         }
-
+        
         /* Header */
         header {
             background-color: white;
@@ -39,7 +39,7 @@
             top: 0;
             z-index: 100;
         }
-
+        
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -48,42 +48,42 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-
+        
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
             color: var(--secondary);
         }
-
+        
         .logo span {
             color: var(--primary);
         }
-
+        
         nav ul {
             display: flex;
             list-style: none;
         }
-
+        
         nav ul li {
             margin-left: 1.5rem;
         }
-
+        
         nav ul li a {
             text-decoration: none;
             color: var(--dark);
             font-weight: 500;
             transition: color 0.3s;
         }
-
+        
         nav ul li a:hover {
             color: var(--primary);
         }
-
+        
         .cart-icon {
             position: relative;
             cursor: pointer;
         }
-
+        
         .cart-count {
             position: absolute;
             top: -8px;
@@ -98,7 +98,7 @@
             align-items: center;
             font-size: 0.8rem;
         }
-
+        
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
@@ -112,18 +112,18 @@
             color: white;
             padding: 0 1rem;
         }
-
+        
         .hero-content h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
         }
-
+        
         .hero-content p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
             max-width: 600px;
         }
-
+        
         .btn {
             display: inline-block;
             background-color: var(--primary);
@@ -136,12 +136,12 @@
             transition: all 0.3s;
             text-decoration: none;
         }
-
+        
         .btn:hover {
             background-color: #e6a400;
             transform: translateY(-2px);
         }
-
+        
         /* Produk Section */
         .section-title {
             text-align: center;
@@ -149,7 +149,7 @@
             font-size: 2rem;
             color: var(--secondary);
         }
-
+        
         .products {
             max-width: 1200px;
             margin: 0 auto;
@@ -158,7 +158,7 @@
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 2rem;
         }
-
+        
         .product-card {
             background-color: white;
             border-radius: var(--radius);
@@ -166,38 +166,54 @@
             box-shadow: var(--shadow);
             transition: transform 0.3s;
         }
-
+        
         .product-card:hover {
             transform: translateY(-5px);
         }
-
+        
         .product-image {
             width: 100%;
             height: 200px;
             object-fit: cover;
         }
-
+        
         .product-info {
             padding: 1.5rem;
         }
-
+        
         .product-title {
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
         }
-
+        
         .product-price {
             font-weight: 700;
             color: var(--secondary);
             margin-bottom: 1rem;
         }
-
+        
         .product-description {
             margin-bottom: 1rem;
             font-size: 0.9rem;
             color: #666;
         }
-
+        
+        .product-rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .rating-stars {
+            color: #ffc107;
+            margin-right: 0.5rem;
+        }
+        
+        .rating-value {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
         .add-to-cart {
             width: 100%;
             background-color: var(--primary);
@@ -207,51 +223,65 @@
             font-weight: 600;
             cursor: pointer;
             transition: background-color 0.3s;
+            margin-bottom: 1rem;
         }
-
+        
         .add-to-cart:hover {
             background-color: #e6a400;
         }
-
+        
+        .view-comments {
+            width: 100%;
+            background-color: #f0f0f0;
+            border: none;
+            padding: 0.7rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .view-comments:hover {
+            background-color: #e0e0e0;
+        }
+        
         /* Form Section */
         .form-section {
             max-width: 800px;
             margin: 3rem auto;
             padding: 0 1rem;
         }
-
+        
         .form-container {
             background-color: white;
             padding: 2rem;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
         }
-
+        
         .form-group {
             margin-bottom: 1.5rem;
         }
-
+        
         label {
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 500;
         }
-
-        input,
-        textarea,
-        select {
+        
+        input, textarea, select {
             width: 100%;
             padding: 0.8rem;
             border: 1px solid #ddd;
             border-radius: var(--radius);
             font-size: 1rem;
         }
-
+        
         textarea {
             height: 100px;
             resize: vertical;
         }
-
+        
         /* Cart Modal */
         .modal {
             display: none;
@@ -265,7 +295,7 @@
             justify-content: center;
             align-items: center;
         }
-
+        
         .modal-content {
             background-color: white;
             width: 90%;
@@ -275,7 +305,7 @@
             max-height: 80vh;
             overflow-y: auto;
         }
-
+        
         .modal-header {
             display: flex;
             justify-content: space-between;
@@ -284,18 +314,18 @@
             padding-bottom: 1rem;
             border-bottom: 1px solid #eee;
         }
-
+        
         .close-modal {
             background: none;
             border: none;
             font-size: 1.5rem;
             cursor: pointer;
         }
-
+        
         .cart-items {
             margin-bottom: 1.5rem;
         }
-
+        
         .cart-item {
             display: flex;
             justify-content: space-between;
@@ -303,12 +333,12 @@
             padding: 1rem 0;
             border-bottom: 1px solid #eee;
         }
-
+        
         .cart-item-info {
             display: flex;
             align-items: center;
         }
-
+        
         .cart-item-image {
             width: 60px;
             height: 60px;
@@ -316,21 +346,21 @@
             border-radius: var(--radius);
             margin-right: 1rem;
         }
-
+        
         .cart-item-details h4 {
             margin-bottom: 0.3rem;
         }
-
+        
         .cart-item-price {
             color: var(--secondary);
             font-weight: 600;
         }
-
+        
         .cart-item-quantity {
             display: flex;
             align-items: center;
         }
-
+        
         .quantity-btn {
             background-color: #f0f0f0;
             border: none;
@@ -342,11 +372,11 @@
             align-items: center;
             cursor: pointer;
         }
-
+        
         .quantity {
             margin: 0 0.5rem;
         }
-
+        
         .remove-item {
             background: none;
             border: none;
@@ -354,14 +384,14 @@
             cursor: pointer;
             margin-left: 1rem;
         }
-
+        
         .cart-total {
             text-align: right;
             font-size: 1.2rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
         }
-
+        
         .checkout-btn {
             width: 100%;
             background-color: var(--success);
@@ -374,11 +404,81 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
-
+        
         .checkout-btn:hover {
             background-color: #218838;
         }
-
+        
+        /* Comments Modal */
+        .comments-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .comments-content {
+            background-color: white;
+            width: 90%;
+            max-width: 600px;
+            border-radius: var(--radius);
+            padding: 2rem;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .comments-list {
+            margin: 1.5rem 0;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .comment-item {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comment-author {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .comment-text {
+            margin-bottom: 0.5rem;
+        }
+        
+        .comment-rating {
+            color: #ffc107;
+            font-size: 0.9rem;
+        }
+        
+        .add-comment-form {
+            margin-top: 1.5rem;
+        }
+        
+        .star-rating {
+            display: flex;
+            margin-bottom: 1rem;
+        }
+        
+        .star {
+            font-size: 1.5rem;
+            color: #ddd;
+            cursor: pointer;
+            margin-right: 0.2rem;
+            transition: color 0.2s;
+        }
+        
+        .star:hover, .star.active {
+            color: #ffc107;
+        }
+        
         /* Footer */
         footer {
             background-color: var(--secondary);
@@ -387,29 +487,28 @@
             padding: 2rem 1rem;
             margin-top: 3rem;
         }
-
+        
         /* Responsive */
         @media (max-width: 768px) {
             .navbar {
                 flex-direction: column;
                 padding: 1rem;
             }
-
+            
             nav ul {
                 margin-top: 1rem;
             }
-
+            
             .hero-content h1 {
                 font-size: 2rem;
             }
-
+            
             .products {
                 grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             }
         }
     </style>
 </head>
-
 <body>
     <!-- Header -->
     <header>
@@ -432,8 +531,7 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Roti Segar dengan Rasa Premium</h1>
-            <p>Nikmati berbagai pilihan roti berkualitas tinggi yang dibuat dengan bahan-bahan terbaik dan penuh cinta.
-            </p>
+            <p>Nikmati berbagai pilihan roti berkualitas tinggi yang dibuat dengan bahan-bahan terbaik dan penuh cinta.</p>
             <a href="#produk" class="btn">Lihat Produk</a>
         </div>
     </section>
@@ -491,6 +589,41 @@
         </div>
     </div>
 
+    <!-- Modal Komentar -->
+    <div class="comments-modal" id="commentsModal">
+        <div class="comments-content">
+            <div class="modal-header">
+                <h2 id="commentsProductTitle">Komentar Produk</h2>
+                <button class="close-modal" id="closeCommentsModal">&times;</button>
+            </div>
+            <div class="comments-list" id="commentsList">
+                <!-- Daftar komentar akan dimuat melalui JavaScript -->
+            </div>
+            <div class="add-comment-form">
+                <h3>Tambah Komentar</h3>
+                <div class="form-group">
+                    <label for="commentAuthor">Nama Anda</label>
+                    <input type="text" id="commentAuthor" required>
+                </div>
+                <div class="form-group">
+                    <label>Rating</label>
+                    <div class="star-rating" id="starRating">
+                        <span class="star" data-rating="1">★</span>
+                        <span class="star" data-rating="2">★</span>
+                        <span class="star" data-rating="3">★</span>
+                        <span class="star" data-rating="4">★</span>
+                        <span class="star" data-rating="5">★</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="commentText">Komentar</label>
+                    <textarea id="commentText" required></textarea>
+                </div>
+                <button class="btn" id="submitComment">Kirim Komentar</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer id="tentang">
         <p>Modern Bakery &copy; 2023 - Toko Roti Premium dengan Cita Rasa Terbaik</p>
@@ -505,48 +638,79 @@
                 name: "Cheesecake Classic",
                 price: 45000,
                 image: "https://images.unsplash.com/photo-1524351199678-941a58a3df50?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-                description: "Cheesecake lembut dengan rasa keju yang kaya, dilengkapi dengan base biscuit yang renyah."
+                description: "Cheesecake lembut dengan rasa keju yang kaya, dilengkapi dengan base biscuit yang renyah.",
+                rating: 4.5,
+                comments: [
+                    { author: "Rina", text: "Rasanya enak banget! Teksturnya lembut.", rating: 5 },
+                    { author: "Budi", text: "Worth the price! Akan beli lagi.", rating: 4 }
+                ]
             },
             {
                 id: 2,
                 name: "Chocolate Chip Muffin",
                 price: 25000,
-                image: "https://th.bing.com/th/id/OSK.9335629e3dad6aabe13c1730b1e72514?w=200&h=126&c=7&rs=1&qlt=80&o=6&cdv=1&dpr=1.5&pid=16.1",
-                description: "Muffin cokelat dengan choco chips yang melimpah, lembut dan manis sempurna."
+                image: "https://th.bing.com/th/id/OIP.-vrhWHrGQbPL6McicU9QHgHaH4?w=199&h=211&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+                description: "Muffin cokelat dengan choco chips yang melimpah, lembut dan manis sempurna.",
+                rating: 4.2,
+                comments: [
+                    { author: "Sari", text: "Anak-anak suka banget!", rating: 4 },
+                    { author: "Andi", text: "Coklatnya banyak, enak!", rating: 5 }
+                ]
             },
             {
                 id: 3,
                 name: "Sourdough Bread",
                 price: 35000,
                 image: "https://images.unsplash.com/photo-1586444248902-2f64eddc13df?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-                description: "Roti sourdough dengan tekstur kenyal dan rasa asam yang khas, dibuat dengan fermentasi alami."
+                description: "Roti sourdough dengan tekstur kenyal dan rasa asam yang khas, dibuat dengan fermentasi alami.",
+                rating: 4.7,
+                comments: [
+                    { author: "Dewi", text: "Teksturnya sempurna!", rating: 5 },
+                    { author: "Fajar", text: "Rasa asamnya pas, enak untuk sarapan.", rating: 4 }
+                ]
             },
             {
                 id: 4,
                 name: "Butter Cookies",
                 price: 20000,
                 image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-                description: "Kue kering mentega yang renyah dan gurih, cocok untuk teman minum teh atau kopi."
+                description: "Kue kering mentega yang renyah dan gurih, cocok untuk teman minum teh atau kopi.",
+                rating: 4.3,
+                comments: [
+                    { author: "Lia", text: "Renyah dan tidak terlalu manis, perfect!", rating: 5 },
+                    { author: "Rizky", text: "Cocok untuk oleh-oleh.", rating: 4 }
+                ]
             },
             {
                 id: 5,
                 name: "Croissant Almond",
                 price: 28000,
                 image: "https://th.bing.com/th/id/OSK.a43c70e3bc4dffd8bbf5e76e93f3f309?w=200&h=126&c=7&rs=1&qlt=80&o=6&cdv=1&dpr=1.5&pid=16.1",
-                description: "Croissant dengan isian almond paste yang manis dan taburan almond slice di atasnya."
+                description: "Croissant dengan isian almond paste yang manis dan taburan almond slice di atasnya.",
+                rating: 4.6,
+                comments: [
+                    { author: "Maya", text: "Almondnya crunchy, enak banget!", rating: 5 },
+                    { author: "Doni", text: "Pas banget buat sarapan.", rating: 4 }
+                ]
             },
             {
                 id: 6,
                 name: "Red Velvet Cupcake",
                 price: 22000,
                 image: "https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-                description: "Cupcake red velvet dengan cream cheese frosting yang lembut dan manis pas."
+                description: "Cupcake red velvet dengan cream cheese frosting yang lembut dan manis pas.",
+                rating: 4.4,
+                comments: [
+                    { author: "Salsa", text: "Warnanya cantik dan rasanya enak!", rating: 5 },
+                    { author: "Raka", text: "Cream cheeseny pas tidak terlalu manis.", rating: 4 }
+                ]
             }
         ];
 
         // Keranjang belanja
         let cart = [];
         let nextProductId = 7;
+        let currentProductId = null;
 
         // DOM Elements
         const productList = document.getElementById('productList');
@@ -558,10 +722,20 @@
         const cartTotal = document.getElementById('cartTotal');
         const checkoutBtn = document.getElementById('checkoutBtn');
         const addProductForm = document.getElementById('addProductForm');
+        
+        // Elements untuk komentar
+        const commentsModal = document.getElementById('commentsModal');
+        const closeCommentsModal = document.getElementById('closeCommentsModal');
+        const commentsProductTitle = document.getElementById('commentsProductTitle');
+        const commentsList = document.getElementById('commentsList');
+        const commentAuthor = document.getElementById('commentAuthor');
+        const commentText = document.getElementById('commentText');
+        const submitComment = document.getElementById('submitComment');
 
         // Fungsi untuk menampilkan produk
         function displayProducts() {
             productList.innerHTML = '';
+            
             products.forEach(product => {
                 const productCard = document.createElement('div');
                 productCard.className = 'product-card';
@@ -571,18 +745,102 @@
                         <h3 class="product-title">${product.name}</h3>
                         <p class="product-price">Rp ${product.price.toLocaleString()}</p>
                         <p class="product-description">${product.description}</p>
+                        <div class="product-rating">
+                            <div class="rating-stars">${generateStarRating(product.rating)}</div>
+                            <span class="rating-value">${product.rating} (${product.comments.length} ulasan)</span>
+                        </div>
                         <button class="add-to-cart" data-id="${product.id}">Tambah ke Keranjang</button>
+                        <button class="view-comments" data-id="${product.id}">Lihat Komentar (${product.comments.length})</button>
                     </div>
                 `;
                 productList.appendChild(productCard);
             });
 
-            // Tambah event listener untuk tombol tambah ke keranjang
+            // Inisialisasi event listener untuk semua tombol
+            initializeEventListeners();
+        }
+
+        // Fungsi untuk menghasilkan bintang rating
+        function generateStarRating(rating) {
+            let stars = '';
+            const fullStars = Math.floor(rating);
+            const hasHalfStar = rating % 1 !== 0;
+            
+            for (let i = 1; i <= 5; i++) {
+                if (i <= fullStars) {
+                    stars += '★';
+                } else if (i === fullStars + 1 && hasHalfStar) {
+                    stars += '½';
+                } else {
+                    stars += '☆';
+                }
+            }
+            
+            return stars;
+        }
+
+        // Fungsi untuk menginisialisasi event listener
+        function initializeEventListeners() {
+            // Tombol tambah ke keranjang
             document.querySelectorAll('.add-to-cart').forEach(button => {
                 button.addEventListener('click', (e) => {
                     const productId = parseInt(e.target.getAttribute('data-id'));
                     addToCart(productId);
                 });
+            });
+            
+            // Tombol lihat komentar
+            document.querySelectorAll('.view-comments').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const productId = parseInt(e.target.getAttribute('data-id'));
+                    openCommentsModal(productId);
+                });
+            });
+        }
+
+        // Fungsi untuk membuka modal komentar
+        function openCommentsModal(productId) {
+            currentProductId = productId;
+            const product = products.find(p => p.id === productId);
+            commentsProductTitle.textContent = `Komentar untuk ${product.name}`;
+            
+            // Tampilkan komentar
+            displayComments(product.comments);
+            
+            // Reset form
+            commentAuthor.value = '';
+            commentText.value = '';
+            resetStarRating();
+            
+            // Tampilkan modal
+            commentsModal.style.display = 'flex';
+        }
+
+        // Fungsi untuk menampilkan komentar
+        function displayComments(comments) {
+            commentsList.innerHTML = '';
+            
+            if (comments.length === 0) {
+                commentsList.innerHTML = '<p>Belum ada komentar untuk produk ini.</p>';
+                return;
+            }
+            
+            comments.forEach(comment => {
+                const commentItem = document.createElement('div');
+                commentItem.className = 'comment-item';
+                commentItem.innerHTML = `
+                    <div class="comment-author">${comment.author}</div>
+                    <div class="comment-rating">${generateStarRating(comment.rating)}</div>
+                    <div class="comment-text">${comment.text}</div>
+                `;
+                commentsList.appendChild(commentItem);
+            });
+        }
+
+        // Fungsi untuk reset rating bintang
+        function resetStarRating() {
+            document.querySelectorAll('.star').forEach(star => {
+                star.classList.remove('active');
             });
         }
 
@@ -590,7 +848,7 @@
         function addToCart(productId) {
             const product = products.find(p => p.id === productId);
             const existingItem = cart.find(item => item.id === productId);
-
+            
             if (existingItem) {
                 existingItem.quantity += 1;
             } else {
@@ -602,7 +860,7 @@
                     quantity: 1
                 });
             }
-
+            
             updateCart();
             alert(`${product.name} telah ditambahkan ke keranjang!`);
         }
@@ -610,11 +868,11 @@
         // Fungsi untuk memperbarui tampilan keranjang
         function updateCart() {
             cartCount.textContent = cart.reduce((total, item) => total + item.quantity, 0);
-
+            
             // Hitung total harga
             const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
             cartTotal.textContent = total.toLocaleString();
-
+            
             // Tampilkan item di keranjang
             cartItems.innerHTML = '';
             cart.forEach(item => {
@@ -637,22 +895,30 @@
                 `;
                 cartItems.appendChild(cartItem);
             });
+            
+            // Inisialisasi event listener untuk tombol di keranjang
+            initializeCartButtons();
+        }
 
-            // Tambah event listener untuk tombol kuantitas dan hapus
+        // Fungsi untuk menginisialisasi event listener tombol di keranjang
+        function initializeCartButtons() {
+            // Tombol kurangi kuantitas
             document.querySelectorAll('.decrease').forEach(button => {
                 button.addEventListener('click', (e) => {
                     const productId = parseInt(e.target.getAttribute('data-id'));
                     decreaseQuantity(productId);
                 });
             });
-
+            
+            // Tombol tambah kuantitas
             document.querySelectorAll('.increase').forEach(button => {
                 button.addEventListener('click', (e) => {
                     const productId = parseInt(e.target.getAttribute('data-id'));
                     increaseQuantity(productId);
                 });
             });
-
+            
+            // Tombol hapus item
             document.querySelectorAll('.remove-item').forEach(button => {
                 button.addEventListener('click', (e) => {
                     const productId = parseInt(e.target.getAttribute('data-id'));
@@ -693,14 +959,35 @@
                 name,
                 price: parseInt(price),
                 image,
-                description
+                description,
+                rating: 0,
+                comments: []
             };
-
+            
             products.push(newProduct);
             nextProductId++;
-
+            
+            // Perbarui tampilan produk
             displayProducts();
             alert('Produk berhasil ditambahkan!');
+        }
+
+        // Fungsi untuk menambah komentar baru
+        function addNewComment(productId, author, text, rating) {
+            const product = products.find(p => p.id === productId);
+            product.comments.push({ author, text, rating: parseInt(rating) });
+            
+            // Hitung ulang rating rata-rata
+            const totalRating = product.comments.reduce((sum, comment) => sum + comment.rating, 0);
+            product.rating = (totalRating / product.comments.length).toFixed(1);
+            
+            // Perbarui tampilan produk
+            displayProducts();
+            
+            // Perbarui tampilan komentar
+            displayComments(product.comments);
+            
+            alert('Komentar berhasil ditambahkan!');
         }
 
         // Event Listeners
@@ -712,9 +999,16 @@
             cartModal.style.display = 'none';
         });
 
+        closeCommentsModal.addEventListener('click', () => {
+            commentsModal.style.display = 'none';
+        });
+
         window.addEventListener('click', (e) => {
             if (e.target === cartModal) {
                 cartModal.style.display = 'none';
+            }
+            if (e.target === commentsModal) {
+                commentsModal.style.display = 'none';
             }
         });
 
@@ -723,9 +1017,9 @@
                 alert('Keranjang belanja Anda kosong!');
                 return;
             }
-
-            alert('Terima kasih! Pesanan Anda sedang diproses. Total: Rp ' +
-                cart.reduce((sum, item) => sum + (item.price * item.quantity), 0).toLocaleString());
+            
+            alert('Terima kasih! Pesanan Anda sedang diproses. Total: Rp ' + 
+                  cart.reduce((sum, item) => sum + (item.price * item.quantity), 0).toLocaleString());
             cart = [];
             updateCart();
             cartModal.style.display = 'none';
@@ -733,20 +1027,63 @@
 
         addProductForm.addEventListener('submit', (e) => {
             e.preventDefault();
-
+            
             const name = document.getElementById('productName').value;
             const price = document.getElementById('productPrice').value;
             const image = document.getElementById('productImage').value;
             const description = document.getElementById('productDescription').value;
-
+            
+            // Validasi input
+            if (!name || !price || !image || !description) {
+                alert('Harap isi semua field!');
+                return;
+            }
+            
             addNewProduct(name, price, image, description);
             addProductForm.reset();
         });
 
-        // Inisialisasi
-        displayProducts();
-        updateCart();
+        // Event listener untuk rating bintang
+        document.querySelectorAll('.star').forEach(star => {
+            star.addEventListener('click', (e) => {
+                const rating = parseInt(e.target.getAttribute('data-rating'));
+                
+                // Reset semua bintang
+                document.querySelectorAll('.star').forEach(s => {
+                    s.classList.remove('active');
+                });
+                
+                // Aktifkan bintang yang dipilih
+                for (let i = 1; i <= rating; i++) {
+                    document.querySelector(`.star[data-rating="${i}"]`).classList.add('active');
+                }
+            });
+        });
+
+        // Event listener untuk submit komentar
+        submitComment.addEventListener('click', () => {
+            const author = commentAuthor.value.trim();
+            const text = commentText.value.trim();
+            const rating = document.querySelectorAll('.star.active').length;
+            
+            if (!author || !text || rating === 0) {
+                alert('Harap isi semua field termasuk rating!');
+                return;
+            }
+            
+            addNewComment(currentProductId, author, text, rating);
+            
+            // Reset form
+            commentAuthor.value = '';
+            commentText.value = '';
+            resetStarRating();
+        });
+
+        // Inisialisasi saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', () => {
+            displayProducts();
+            updateCart();
+        });
     </script>
 </body>
-
 </html>
